@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Racking Systems - Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        'blue-900': '#1e3a8a',
+                        'tech-gray': '#64748b'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+      <!-- Header -->
+ <header class="bg-blue-900 text-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 md:px-10">
+    <!-- Top contact bar -->
+    <div class="hidden md:flex justify-end items-center py-2 text-sm text-gray-300 border-b border-slate-600">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-phone h-4 w-4"></i>
+          <span>+973 33091970</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fas fa-envelope h-4 w-4"></i>
+          <span>info@linerise.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main navigation -->
+    <div class="flex items-center justify-between py-3">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img src="./img/logo.png" alt="Line Rise Logo" class="w-12 h-12 object-contain" />
+        <div>
+          <h1 class="text-xl font-bold text-white">Line Rise</h1>
+          <p class="text-xs text-gray-300">E-Commerce Solutions</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" class="text-white hover:text-gray-300 transition-colors">Home</a>
+        <a href="./shop.html" class="text-white hover:text-gray-300 transition-colors">Shop</a>
+        <a href="./brad.html" class="text-white hover:text-gray-300 transition-colors">Our Brands</a>
+        <a href="./client.html" class="text-white hover:text-gray-300 transition-colors">Clients</a>
+        <a href="./about.html" class="text-white hover:text-gray-300 transition-colors">About Us</a>
+        <a href="./contact.html" class="text-white hover:text-gray-300 transition-colors">Contact Us</a>
+      </nav>
+
+      <!-- Cart Icon & Mobile menu button -->
+      <div class="flex items-center gap-4">
+        <!-- Cart Button Added -->
+       <div class="relative">
+        <a href="./cart.html">
+  <button class="p-2 hover:bg-blue-800 rounded-lg transition-colors">
+    <!-- Cart SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.3 5.2a1 1 0 001 1.3h12.6a1 1 0 001-1.3L17 13M7 13H5.4M17 13l1.3 5.2M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z" />
+    </svg>
+  </button>
+  </a>
+  <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+</div>
+
+
+        <!-- Mobile menu button -->
+        <button class="md:hidden" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars h-6 w-6" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden py-4 border-t border-slate-600 hidden" id="mobile-menu">
+      <nav class="flex flex-col gap-4">
+        <a href="#home" class="text-white hover:text-gray-300 transition-colors">Home</a>
+        <a href="#shop" class="text-white hover:text-gray-300 transition-colors">Shop</a>
+        <a href="#brands" class="text-white hover:text-gray-300 transition-colors">Our Brands</a>
+        <a href="#clients" class="text-white hover:text-gray-300 transition-colors">Clients</a>
+        <a href="#about" class="text-white hover:text-gray-300 transition-colors">About Us</a>
+        <a href="#contact" class="text-white hover:text-gray-300 transition-colors">Contact Us</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+     <!-- Shop Section Header -->
+<div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Shop Our Bestsellers
+    </h1>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Browse top-quality products across electronics, fashion, home, and lifestyle. 
+        Grab amazing deals, enjoy fast delivery, and shop with confidence.
+    </p>
+</div>
+
+
+      <div class="flex flex-col lg:flex-row gap-8">
+    <!-- Left Sidebar - Filters -->
+<aside class="lg:w-1/4">
+    <div class="bg-white rounded-lg shadow-lg p-6 sticky top-24">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">Filter Products</h3>
+
+        <!-- Search -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Search</label>
+            <div class="relative">
+                <i data-lucide="search" class="h-5 w-5 text-gray-400 absolute left-3 top-3"></i>
+                <input type="text" placeholder="Search products..." 
+                       class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+            <select class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <option value="">All Categories</option>
+                <option value="bed-sheet">Bed Sheets</option>
+                <option value="cooking">Cooking Accessories</option>
+                <option value="skincare">Face Creams</option>
+                <option value="home-decor">Home Decor</option>
+                <option value="kitchen">Kitchen Essentials</option>
+            </select>
+        </div>
+
+        <!-- Brand Filter -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
+            <div class="space-y-2">
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">Brand A</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">Brand B</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">Brand C</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Size Filter -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Size</label>
+            <div class="space-y-2">
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">Small</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">Medium</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">Large</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Ratings Filter -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Customer Ratings</label>
+            <div class="space-y-2">
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">⭐ 4 & above</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">⭐ 3 & above</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-sm text-gray-600">⭐ 2 & above</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Color Filter -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Color</label>
+            <div class="flex gap-2 flex-wrap">
+                <span class="w-6 h-6 bg-red-500 rounded-full cursor-pointer border border-gray-300"></span>
+                <span class="w-6 h-6 bg-blue-500 rounded-full cursor-pointer border border-gray-300"></span>
+                <span class="w-6 h-6 bg-green-500 rounded-full cursor-pointer border border-gray-300"></span>
+                <span class="w-6 h-6 bg-yellow-400 rounded-full cursor-pointer border border-gray-300"></span>
+                <span class="w-6 h-6 bg-pink-400 rounded-full cursor-pointer border border-gray-300"></span>
+            </div>
+        </div>
+
+        <!-- Price Range -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+            <div class="space-y-2">
+                <input type="range" min="0" max="5000" value="2500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                <div class="flex justify-between text-xs text-gray-500">
+                    <span>$0</span>
+                    <span>$5000+</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clear Filters Button -->
+        <button class="w-full bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">
+            Clear All Filters
+        </button>
+    </div>
+</aside>
+
+
+    <!-- Main Content Area -->
+    <div class="lg:w-3/4">
+        <!-- Sort and Results Info -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+            <p class="text-gray-600">Showing <span class="font-semibold">1-12</span> of <span class="font-semibold">36</span> results</p>
+            <div class="flex gap-4">
+                <select class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option>Sort by Latest</option>
+                    <option>Sort by Price: Low to High</option>
+                    <option>Sort by Price: High to Low</option>
+                    <option>Sort by Popularity</option>
+                </select>
+                <div class="flex border border-gray-300 rounded-lg">
+                    <button class="p-2 hover:bg-gray-100" onclick="setGridView('grid')">
+                        <i data-lucide="grid-3x3" class="h-5 w-5"></i>
+                    </button>
+                    <button class="p-2 hover:bg-gray-100 border-l" onclick="setGridView('list')">
+                        <i data-lucide="list" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="./img/f-1.jpg" 
+                         alt="Luxury Bed Sheet Set" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Luxury Bed Sheet Set</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Soft, high-thread-count bed sheets available in various colors and sizes.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-900 font-bold">$79.99</span>
+                        <button class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="./img/f-2.jpg" 
+                         alt="Cooking Utensils Set" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Cooking Utensils Set</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Complete set of premium kitchen tools for everyday cooking.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-900 font-bold">$49.99</span>
+                        <button class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="./img/f-3.jpg" 
+                         alt="Face Cream Set" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Face Cream Set</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Hydrating and nourishing face creams suitable for all skin types.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-900 font-bold">$29.99</span>
+                        <button class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="./img/f-4.jpg" 
+                         alt="Face Cream Set" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Face Cream Set</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Hydrating and nourishing face creams suitable for all skin types.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-900 font-bold">$29.99</span>
+                        <button class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+              <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="./img/f-1.jpg" 
+                         alt="Cooking Utensils Set" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Cooking Utensils Set</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Complete set of premium kitchen tools for everyday cooking.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-900 font-bold">$49.99</span>
+                        <button class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="./img/f-2.jpg" 
+                         alt="Face Cream Set" 
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Face Cream Set</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Hydrating and nourishing face creams suitable for all skin types.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-900 font-bold">$29.99</span>
+                        <button class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more product cards similarly -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+            <nav class="flex items-center gap-2">
+                <button class="px-3 py-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i data-lucide="chevron-left" class="h-5 w-5"></i>
+                </button>
+                <button class="px-4 py-2 bg-blue-900 text-white rounded-lg">1</button>
+                <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">2</button>
+                <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">3</button>
+                <span class="px-2 text-gray-500">...</span>
+                <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">12</button>
+                <button class="px-3 py-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                </button>
+            </nav>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+     <!-- Footer -->
+  <footer class="bg-blue-900 text-white">
+  <div class="container mx-auto px-4 md:px-24 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Logo & About -->
+      <div>
+        <div class="flex items-center gap-2 mb-6">
+          <img src="./img/logo.png" alt="Line Rise Logo" class="w-10 h-10 object-contain rounded-lg">
+          <div>
+            <h3 class="text-xl font-bold">Line Rise</h3>
+            <p class="text-xs text-gray-300">E-Commerce Solutions</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Your one-stop e-commerce destination for electronics, fashion, lifestyle essentials, and more.
+          Shop conveniently and securely from anywhere.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+          <a href="#" class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+            <i class="fab fa-instagram text-sm"></i>
+          </a>
+          <a href="#" class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+            <i class="fab fa-twitter text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Shop Categories -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Shop</h4>
+        <ul class="space-y-3">
+          <li><a href="#electronics" class="text-gray-300 hover:text-white transition-colors">Electronics</a></li>
+          <li><a href="#fashion" class="text-gray-300 hover:text-white transition-colors">Fashion</a></li>
+          <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home & Lifestyle</a></li>
+          <li><a href="#beauty" class="text-gray-300 hover:text-white transition-colors">Beauty & Health</a></li>
+          <li><a href="#offers" class="text-gray-300 hover:text-white transition-colors">Deals & Offers</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Support -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Support</h4>
+        <ul class="space-y-3">
+          <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#shipping" class="text-gray-300 hover:text-white transition-colors">Shipping Info</a></li>
+          <li><a href="#returns" class="text-gray-300 hover:text-white transition-colors">Returns & Exchanges</a></li>
+          <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact Support</a></li>
+          <li><a href="#track" class="text-gray-300 hover:text-white transition-colors">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Newsletter -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Contact & Newsletter</h4>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-phone text-blue-400"></i>
+            <p class="text-gray-300">+973 33091970</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="fas fa-envelope text-blue-400"></i>
+            <p class="text-gray-300">info@linerise.com</p>
+          </div>
+        </div>
+        <form class="mt-6 flex gap-2">
+          <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-lg text-gray-900" />
+          <button class="bg-blue-400 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-500 transition-colors">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-blue-800 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-400 text-sm">
+          © 2025 Line Rise. All rights reserved.
+        </p>
+        <div class="flex gap-6 text-sm">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/97333091970" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+       <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.className = 'fas fa-times h-6 w-6';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fas fa-bars h-6 w-6';
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const menuIcon = document.getElementById('menu-icon');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.className = 'fas fa-bars h-6 w-6';
+                    }
+                }
+            });
+        });
+
+        // Counter animation
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    start = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(start).toLocaleString() + '+';
+            }, 16);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Counter animation
+                    if (entry.target.classList.contains('count-up')) {
+                        const target = parseInt(entry.target.dataset.target);
+                        animateCounter(entry.target, target);
+                        observer.unobserve(entry.target);
+                    }
+                    
+                    // Slide up animation
+                    if (entry.target.classList.contains('animate-slide-up')) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Counter elements
+            document.querySelectorAll('.count-up').forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+
+            // Slide up elements
+            document.querySelectorAll('.animate-slide-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(50px)';
+                el.style.transition = 'all 0.8s ease-out';
+                observer.observe(el);
+            });
+
+            // Card hover effects
+            document.querySelectorAll('.tech-card-hover').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Simple validation
+            if (!data.full_name || !data.email || !data.phone || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show success message (in real implementation, you'd send to server)
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            event.target.reset();
+        }
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(30, 58, 138, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = 'rgb(30, 58, 138)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
